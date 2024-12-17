@@ -184,6 +184,61 @@ SuperH architektūra buvo sukurta kaip 32 bitų sistema:
 \end{itemize}
 Šis dizainas leido sumažinti energijos suvartojimą ir padidinti instrukcijų vykdymo greitį, ypač įterptosiose sistemose.
 
+\section{Atminties išdėstymas}
+\subsection{PowerPC}
+PowerPC architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe palaikyti virtualią atmintį. 
+
+\begin{itemize}
+    \item \textbf{Adreso plotis:} 
+        \begin{itemize}
+            \item 32 bitai ankstyvuose modeliuose.
+            \item 64 bitai vėlesniuose modeliuose (PowerPC 64).
+        \end{itemize}
+    \item \textbf{Maksimalus atminties kiekis:}
+        \begin{itemize}
+            \item 32 bitų sistemose – iki \( 4 \, \text{GB} \) (2\textsuperscript{32} adresų).
+            \item 64 bitų sistemose – iki \( 16 \, \text{EB} \) (2\textsuperscript{64} adresų).
+        \end{itemize}
+    \item \textbf{Tipiškas atminties kiekis:}
+        \begin{itemize}
+            \item Ankstyvose sistemose – nuo \( 64 \, \text{MB} \) iki \( 512 \, \text{MB} \).
+            \item Naujesnėse serverių sistemose – nuo kelių GB iki kelių TB.
+        \end{itemize}
+    \item \textbf{Atminties valdymas:}
+        \begin{itemize}
+            \item Virtualios atminties valdymas su puslapių peradresavimu (MMU – Memory Management Unit).
+            \item Ištisinė erdvė leidžia tiesioginį adresavimą.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe taikyti segmentuotą atminties valdymą dėl savo paprasto dizaino.
+
+\begin{itemize}
+    \item \textbf{Adreso plotis:} 
+        \begin{itemize}
+            \item 32 bitai, leidžiantys adresuoti iki \( 4 \, \text{GB} \) atminties.
+        \end{itemize}
+    \item \textbf{Maksimalus atminties kiekis:}
+        \begin{itemize}
+            \item Iki \( 4 \, \text{GB} \) dėl 32 bitų adresų pločio.
+        \end{itemize}
+    \item \textbf{Tipiškas atminties kiekis:}
+        \begin{itemize}
+            \item Dažniausiai nuo \( 8 \, \text{MB} \) iki \( 64 \, \text{MB} \) įterptosioms sistemoms.
+        \end{itemize}
+    \item \textbf{Atminties valdymas:}
+        \begin{itemize}
+            \item Nėra pilnos virtualios atminties valdymo sistemos ankstyvuose modeliuose.
+            \item Atminties adresai dažnai tiesiogiai naudojami be sudėtingo segmentavimo.
+        \end{itemize}
+\end{itemize}
+
+\section*{Atminties išdėstymo palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:} Ištisinė adresų erdvė su virtualios atminties valdymu ir MMU. Adreso plotis 32/64 bitai, maksimalus atminties kiekis iki \( 16 \, \text{EB} \).
+    \item \textbf{SuperH:} Ištisinė adresų erdvė, 32 bitų adreso plotis, maksimalus atminties kiekis \( 4 \, \text{GB} \), su ribotu atminties valdymu.
+\end{itemize}
 
 \bibliographystyle{plain}
 \bibliography{literatura} 
