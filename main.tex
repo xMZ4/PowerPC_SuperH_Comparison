@@ -79,6 +79,50 @@ SuperH procesoriai naudoja \textbf{dviejų adresų} architektūrą. Instrukcija 
     \item \textbf{Pavyzdys:} \( R_d = R_d + R_s \), kur \( R_d \) veikia kaip tiek šaltinis, tiek rezultatas.
 \end{itemize}
 
+\section{Registrai}
+\subsection{PowerPC}
+PowerPC architektūra turi tiek \textbf{bendrosios paskirties}, tiek \textbf{specializuotus registrus}. Šie registrai yra svarbūs vykdant RISC tipo instrukcijas ir optimizuojant skaičiavimus.
+
+\begin{itemize}
+    \item \textbf{Bendrosios paskirties registrai:} 
+        \begin{itemize}
+            \item PowerPC turi \textbf{32 bendrosios paskirties registrus} (GPR – General Purpose Registers).
+            \item Registrų \textbf{duomenų plotis}: 32 bitai ankstyvuose modeliuose, vėlesniuose modeliuose – 64 bitai.
+        \end{itemize}
+    \item \textbf{Specializuoti registrai:}
+        \begin{itemize}
+            \item \textbf{LR (Link Register):} Saugoti grįžimo adresą funkcijų kvietimuose.
+            \item \textbf{CTR (Count Register):} Naudojamas ciklams ir skaičiavimams.
+            \item \textbf{FPSCR (Floating Point Status and Control Register):} Valdo slankaus kablelio operacijas.
+            \item \textbf{Specialūs vektoriniai registrai:} Naudojami multimedijos ir signalų apdorojimui (vėlesniuose modeliuose).
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūra turi mažesnį skaičių registrų, tačiau jie yra efektyviai panaudojami, kadangi SuperH yra skirta įterptosioms sistemoms, kur mažas energijos suvartojimas ir greitis yra itin svarbūs.
+
+\begin{itemize}
+    \item \textbf{Bendrosios paskirties registrai:}
+        \begin{itemize}
+            \item SuperH turi \textbf{16 bendrosios paskirties registrų} (R0–R15).
+            \item Registrų \textbf{duomenų plotis}: 32 bitai.
+        \end{itemize}
+    \item \textbf{Specializuoti registrai:}
+        \begin{itemize}
+            \item \textbf{PC (Program Counter):} Laiko vykdomos instrukcijos adresą.
+            \item \textbf{SR (Status Register):} Saugomi procesoriaus būsenos bitai.
+            \item \textbf{SP (Stack Pointer):} Valdo steko operacijas.
+            \item \textbf{MAC (Multiply-Accumulate Register):} Naudojamas dauginimo ir sumavimo operacijoms.
+        \end{itemize}
+\end{itemize}
+
+\section*{Registrų palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:} 32 bendrosios paskirties registrai, duomenų plotis iki 64 bitų, daug specializuotų registrų.
+    \item \textbf{SuperH:} 16 bendrosios paskirties registrų, 32 bitų duomenų plotis, mažiau specializuotų registrų.
+\end{itemize}
+
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
