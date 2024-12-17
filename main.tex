@@ -436,6 +436,74 @@ SuperH architektūra palaiko mažesnį adresavimo režimų rinkinį dėl RISC ar
         \end{itemize}
 \end{itemize}
 
+\section{Įvesties/išvesties (I/O) galimybės}
+\subsection{PowerPC}
+PowerPC architektūra pasižymėjo plačiomis ir lankstiomis I/O galimybėmis, kurios pritaikytos įvairiems taikymo scenarijams – nuo darbalaukio kompiuterių iki serverių ir įterptųjų sistemų.
+
+\begin{itemize}
+    \item \textbf{Atminties žemėlapio I/O (Memory-Mapped I/O):}
+        \begin{itemize}
+            \item I/O įrenginiai adresuojami kaip atminties erdvės dalis.
+            \item Leidžia efektyvų duomenų apsikeitimą tarp procesoriaus ir I/O įrenginių.
+        \end{itemize}
+    \item \textbf{Specialūs I/O registrai:}
+        \begin{itemize}
+            \item PowerPC procesoriai turi specializuotus registrus I/O valdymui.
+            \item Tai leidžia greitai valdyti periferinius įrenginius.
+        \end{itemize}
+    \item \textbf{Išplėtimo sąsajos:}
+        \begin{itemize}
+            \item Palaikomos tokios sąsajos kaip PCI, PCI-X, AGP ir vėlesnėse versijose PCIe.
+            \item Plačiai naudota serveriuose ir konsolėse, tokiose kaip Xbox 360.
+        \end{itemize}
+    \item \textbf{Tiesioginė atminties prieiga (DMA):}
+        \begin{itemize}
+            \item Leidžia I/O įrenginiams tiesiogiai keistis duomenimis su atmintimi, apeinant procesorių.
+            \item Gerina našumą ir mažina CPU apkrovą.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūra buvo sukurta įterptosioms sistemoms, todėl jos I/O galimybės buvo supaprastintos ir pritaikytos mažos galios periferinių įrenginių valdymui.
+
+\begin{itemize}
+    \item \textbf{Atminties žemėlapio I/O (Memory-Mapped I/O):}
+        \begin{itemize}
+            \item I/O įrenginiai integruojami į procesoriaus adresų erdvę.
+            \item Tai leidžia paprastą ir tiesioginį periferinių įrenginių valdymą.
+        \end{itemize}
+    \item \textbf{Tiesioginė atminties prieiga (DMA):}
+        \begin{itemize}
+            \item SuperH palaiko DMA valdymą mažiems duomenų srautams perduoti tiesiogiai tarp įrenginių ir atminties.
+        \end{itemize}
+    \item \textbf{I/O prievadai:}
+        \begin{itemize}
+            \item I/O prievadai naudojami tiesioginiam periferinių įrenginių valdymui (pvz., GPIO prievadai, UART sąsaja).
+            \item Tai itin svarbu įterptosiose sistemose, kur reikalingas tiesioginis valdymas su mažomis energijos sąnaudomis.
+        \end{itemize}
+    \item \textbf{Serijinės sąsajos:}
+        \begin{itemize}
+            \item Plačiai naudojamos serijinės komunikacijos sąsajos, tokios kaip UART, SPI ir I\textsuperscript{2}C.
+            \item Tai efektyvūs sprendimai mažos spartos įrenginių prijungimui.
+        \end{itemize}
+\end{itemize}
+
+\section*{I/O galimybių palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:}
+        \begin{itemize}
+            \item Palaiko sudėtingesnes I/O sąsajas, tokias kaip PCI ir PCIe.
+            \item Turi DMA valdymą dideliems duomenų srautams.
+            \item Naudojamas atminties žemėlapio I/O ir specializuoti I/O registrai.
+        \end{itemize}
+    \item \textbf{SuperH:}
+        \begin{itemize}
+            \item Supaprastintas I/O modelis, skirtas mažos spartos periferiniams įrenginiams.
+            \item Palaiko DMA mažiems duomenų srautams ir serijines sąsajas, tokias kaip UART, SPI ir I\textsuperscript{2}C.
+            \item Efektyviai naudoja atminties žemėlapio I/O.
+        \end{itemize}
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
