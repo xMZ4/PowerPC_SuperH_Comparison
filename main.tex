@@ -504,6 +504,72 @@ SuperH architektūra buvo sukurta įterptosioms sistemoms, todėl jos I/O galimy
         \end{itemize}
 \end{itemize}
 
+\section{Pertraukimų mechanizmai}
+\subsection{PowerPC}
+PowerPC architektūra palaiko išplėstinį pertraukčių valdymą, kuris naudojamas aukštos spartos ir sudėtingose sistemose. Pagrindiniai pertraukimų mechanizmai:
+
+\begin{itemize}
+    \item \textbf{Tipai:}
+        \begin{itemize}
+            \item \textbf{Išorinės pertrauktys:} Generuojamos iš periferinių įrenginių ar kitų išorinių šaltinių.
+            \item \textbf{Vidinės pertrauktys:} Sukeliamos programinės klaidos (pvz., dalyba iš nulio) ar instrukcijų vykdymo išimtys.
+            \item \textbf{Laiko pertrauktys:} Sukeliamos laikmačio arba skaitiklio veikimo.
+        \end{itemize}
+    \item \textbf{Pertraukimų valdymas:}
+        \begin{itemize}
+            \item Naudojamas specialus \textbf{MSR (Machine State Register)}, kuris valdo pertraukimų įjungimą/išjungimą ir procesoriaus būseną.
+            \item \textbf{IVOR (Interrupt Vector Offset Registers):} Nurodo pertraukčių tvarkymo vektorių adresus.
+        \end{itemize}
+    \item \textbf{Prioritetai:}
+        \begin{itemize}
+            \item PowerPC palaiko pertraukimų prioriteto lygmenis, leidžiančius valdyti svarbesnes pertrauktis.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūra taip pat palaiko pertraukimų mechanizmą, tačiau jis yra supaprastintas dėl įterptųjų sistemų poreikių.
+
+\begin{itemize}
+    \item \textbf{Tipai:}
+        \begin{itemize}
+            \item \textbf{Išorinės pertrauktys:} Sukeliamos iš periferinių įrenginių ar išorinių signalų.
+            \item \textbf{Vidinės pertrauktys:} Sukeliamos programinių klaidų (pvz., neteisingo adreso prieiga).
+            \item \textbf{Laiko pertrauktys:} Generuojamos laikmačio įvykių.
+        \end{itemize}
+    \item \textbf{Pertraukimų valdymas:}
+        \begin{itemize}
+            \item \textbf{SR (Status Register)}: Yra specialus \textbf{I (Interrupt Mask)} bitas, kuris leidžia įjungti arba išjungti pertraukimus.
+            \item Naudojamas \textbf{vektorinis pertraukimų mechanizmas}, kuriame kiekvienai pertraukčiai priskirtas vektoriaus adresas.
+        \end{itemize}
+    \item \textbf{Prioritetai:}
+        \begin{itemize}
+            \item Palaikomi fiksuoti pertraukimų prioritetai su ribotu lygių skaičiumi.
+        \end{itemize}
+\end{itemize}
+
+\section*{Pertraukimų mechanizmų palyginimas}
+\begin{itemize}
+    \item \textbf{Panašumai:}
+        \begin{itemize}
+            \item Abi architektūros palaiko išorines, vidines ir laiko pertrauktis.
+            \item Abi architektūros naudoja vektorinius pertraukimų mechanizmus.
+            \item Pertraukimai gali būti įjungiami arba išjungiami naudojant specialius registrus (\textbf{MSR} PowerPC ir \textbf{SR} SuperH).
+        \end{itemize}
+    \item \textbf{Skirtumai:}
+        \begin{itemize}
+            \item \textbf{PowerPC:} 
+                \begin{itemize}
+                    \item Palaiko sudėtingesnį pertraukimų prioritetų valdymą.
+                    \item Naudoja specializuotus registrus, tokius kaip \textbf{IVOR}.
+                \end{itemize}
+            \item \textbf{SuperH:}
+                \begin{itemize}
+                    \item Supaprastintas pertraukimų mechanizmas su ribotu prioritetų skaičiumi.
+                    \item Mažesnė funkcionalumo įvairovė, pritaikyta įterptosioms sistemoms.
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
