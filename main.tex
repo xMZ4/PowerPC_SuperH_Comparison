@@ -62,6 +62,22 @@ SuperH procesoriai taip pat naudoja \textbf{registrinio tipo RISC} architektūr�
             \item Optimizuotas energijos taupymui.
         \end{itemize}
 \end{itemize}
+\section{Adresavimo tipai}
+\subsection{PowerPC}
+PowerPC procesoriai naudoja \textbf{trijų adresų} architektūrą. Instrukcijos dažniausiai turi du šaltinio operandus ir vieną rezultatą, kuris įrašomas į registrą. Ši konstrukcija leidžia atlikti daugiau operacijų per mažesnį instrukcijų skaičių, taip pagerinant našumą.
+
+\begin{itemize}
+    \item \textbf{Adresų skaičius:} Trijų adresų.
+    \item \textbf{Pavyzdys:} \( R_d = R_s + R_t \), kur \( R_d \) – rezultato registras, o \( R_s \) ir \( R_t \) – šaltinio registrai.
+\end{itemize}
+
+\subsection{SuperH}
+SuperH procesoriai naudoja \textbf{dviejų adresų} architektūrą. Instrukcija naudoja vieną šaltinio operandą ir rezultatą, kuris gali būti įrašomas į tą patį registrą arba atmintį. Tai supaprastina procesoriaus instrukcijų dekodavimą, tačiau kartais reikalauja papildomų instrukcijų norint atlikti kompleksines operacijas.
+
+\begin{itemize}
+    \item \textbf{Adresų skaičius:} Dviejų adresų.
+    \item \textbf{Pavyzdys:} \( R_d = R_d + R_s \), kur \( R_d \) veikia kaip tiek šaltinis, tiek rezultatas.
+\end{itemize}
 
 \bibliographystyle{plain}
 \bibliography{literatura} 
