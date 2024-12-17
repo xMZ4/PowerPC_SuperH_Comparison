@@ -1,14 +1,44 @@
 \documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\usepackage{graphicx} % Paveikslėliams įterpti
+\usepackage{geometry} % Paraščių keitimui
+\geometry{a4paper, margin=1in}
+\usepackage{hyperref} % Nuorodoms dokumente
+\usepackage{float}    % Paveikslų ir lentelių pozicionavimui
 
-\title{PowerPC and SuperH Comparison}
+\title{PowerPC ir SuperH palyginimas}
 \author{Mateušas Zlosnikas}
-\date{December 2024}
+\date{2024 m. gruodis}
 
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\tableofcontents % Turinys
+
+\section{Įvadas}
+Šiame dokumente palyginamos dvi procesorių architektūros: \textbf{PowerPC} ir \textbf{SuperH}. Abi architektūros turėjo reikšmingą įtaką skirtingoms kompiuterių sritims – nuo įterptųjų sistemų iki aukštos spartos skaičiavimų.
+
+\section{Elementinė kompiuterių bazė}
+\subsection{PowerPC}
+PowerPC procesoriai buvo sukurti naudojant \textbf{VLSI} (labai didelės integracijos masto) technologiją ir palaipsniui evoliucionavo iki šiuolaikinių monokristalinių mikroprocesorių. Ankstyvieji modeliai buvo paremti \textbf{RISC} (sumažinto komandų rinkinio kompiuterio) dizainu, siekiant aukšto našumo ir mažo sudėtingumo.
+
+\subsection{SuperH}
+SuperH procesoriai taip pat buvo pagaminti naudojant \textbf{VLSI} technologiją. Jų dizainas buvo optimizuotas mažam energijos suvartojimui ir kompaktiškam dydžiui, todėl jie plačiai naudoti įterptosiose sistemose, automobilių pramonėje ir mobiliojoje elektronikoje.
+
+\section{Fizinės įrangos savybės}
+\subsection{PowerPC}
+\begin{itemize}
+    \item \textbf{Dydis:} Ankstyvieji modeliai buvo didesni, tačiau technologinė pažanga leido procesoriams sumažėti.
+    \item \textbf{Energijos suvartojimas:} Nuo vidutinio iki didelio (50–100 W).
+\end{itemize}
+
+\subsection{SuperH}
+\begin{itemize}
+    \item \textbf{Dydis:} Kompaktiškas dizainas, užimantis vos kelis kvadratinius milimetrus.
+    \item \textbf{Energijos suvartojimas:} Itin mažas – nuo 0,5 W iki 10 W.
+\end{itemize}
+
+\bibliographystyle{plain}
+\bibliography{literatura} 
 
 \end{document}
