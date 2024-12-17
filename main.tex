@@ -167,6 +167,23 @@ SuperH architektūroje požymių bitai taip pat egzistuoja, tačiau jų kiekis i
     \item \textbf{SuperH:} Paprastesnė sistema su **SR** registru, kuriame yra pagrindiniai bitai, reikalingi šakoms ir pertrauktims valdyti.
 \end{itemize}
 
+\section{Duomenų plotis (mašininis žodis)}
+\subsection{PowerPC}
+PowerPC architektūros duomenų plotis priklauso nuo procesoriaus kartos:
+\begin{itemize}
+    \item Ankstyvieji PowerPC procesoriai turėjo \textbf{32 bitų} duomenų plotį.
+    \item Vėlesnėse versijose, tokiose kaip PowerPC 64, buvo pereita prie \textbf{64 bitų} duomenų pločio.
+\end{itemize}
+Mašininis žodis nustato maksimalų duomenų kiekį, kurį procesorius gali apdoroti vienu ciklu, todėl 64 bitų versijos leido gerokai didesnį našumą ir adresavimo erdvę.
+
+\subsection{SuperH}
+SuperH architektūra buvo sukurta kaip 32 bitų sistema:
+\begin{itemize}
+    \item Visi bendrosios paskirties registrai ir mašininiai žodžiai yra \textbf{32 bitų}.
+    \item Instrukcijų ilgis: \textbf{16 bitų} fiksuoto ilgio komandos, optimizuotos mažoms atminties sąnaudoms.
+\end{itemize}
+Šis dizainas leido sumažinti energijos suvartojimą ir padidinti instrukcijų vykdymo greitį, ypač įterptosiose sistemose.
+
 
 \bibliographystyle{plain}
 \bibliography{literatura} 
