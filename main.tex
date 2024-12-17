@@ -570,6 +570,83 @@ SuperH architektūra taip pat palaiko pertraukimų mechanizmą, tačiau jis yra 
         \end{itemize}
 \end{itemize}
 
+\section{Palaikomi duomenų tipai}
+\subsection{PowerPC}
+PowerPC architektūra aparatūros lygyje palaiko įvairius duomenų tipus, siekiant užtikrinti lankstumą ir našumą skirtingoms skaičiavimo užduotims.
+
+\begin{itemize}
+    \item \textbf{Sveikieji skaičiai:}
+        \begin{itemize}
+            \item Skaičiai koduojami naudojant \textbf{dvejeto papildomą kodą} (Two's Complement).
+            \item Palaikomi 8, 16, 32 ir 64 bitų sveikieji skaičiai.
+        \end{itemize}
+    \item \textbf{Fiksuoto kablelio aritmetika:}
+        \begin{itemize}
+            \item Palaikoma sveikųjų skaičių fiksuoto kablelio aritmetika su registruose atliekamomis operacijomis.
+        \end{itemize}
+    \item \textbf{Slankiojo kablelio aritmetika:}
+        \begin{itemize}
+            \item Palaikoma aparatinė slankiojo kablelio aritmetika naudojant \textbf{IEEE 754} standartą.
+            \item Palaikomi vieno tikslumo (32 bitų) ir dvigubo tikslumo (64 bitų) slankiojo kablelio skaičiai.
+            \item Operacijos atliekamos naudojant specializuotus slankiojo kablelio registrus.
+        \end{itemize}
+    \item \textbf{Vektoriniai duomenų tipai:}
+        \begin{itemize}
+            \item Vėlesnėse PowerPC versijose palaikoma \textbf{Altivec (Velocity Engine)} technologija, skirta vektorinei aritmetikai.
+            \item Leidžia vykdyti operacijas su vektoriais (pvz., 128 bitų registruose).
+        \end{itemize}
+    \item \textbf{Egzotiški duomenų tipai:}
+        \begin{itemize}
+            \item Specialūs duomenų tipai palaikomi naudojant vektorinius ir slankiojo kablelio registrus, tačiau aparatinis palaikymas dešimtainiams ar kompleksiniams skaičiams yra ribotas.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūra yra labiau supaprastinta ir pritaikyta įterptosioms sistemoms, todėl palaiko mažesnį duomenų tipų rinkinį.
+
+\begin{itemize}
+    \item \textbf{Sveikieji skaičiai:}
+        \begin{itemize}
+            \item Skaičiai koduojami naudojant \textbf{dvejeto papildomą kodą} (Two's Complement).
+            \item Palaikomi 8, 16 ir 32 bitų sveikieji skaičiai.
+        \end{itemize}
+    \item \textbf{Fiksuoto kablelio aritmetika:}
+        \begin{itemize}
+            \item Palaikoma pagrindinė fiksuoto kablelio aritmetika naudojant bendrosios paskirties registrus.
+        \end{itemize}
+    \item \textbf{Slankiojo kablelio aritmetika:}
+        \begin{itemize}
+            \item Tik kai kuriuose SuperH modeliuose (pvz., SH-4) yra palaikomas slankiojo kablelio skaičiavimas pagal \textbf{IEEE 754} standartą.
+            \item Atliekamos operacijos su vieno tikslumo (32 bitų) slankiojo kablelio skaičiais.
+        \end{itemize}
+    \item \textbf{Egzotiški duomenų tipai:}
+        \begin{itemize}
+            \item SuperH architektūra nesiūlo aparatinio palaikymo dešimtainiams ar kompleksiniams skaičiams.
+        \end{itemize}
+\end{itemize}
+
+\section*{Duomenų tipų palyginimas}
+\begin{itemize}
+    \item \textbf{Panašumai:}
+        \begin{itemize}
+            \item Abi architektūros palaiko sveikuosius skaičius, koduojamus \textbf{dvejeto papildomu kodu}.
+            \item Abi palaiko fiksuoto kablelio aritmetiką.
+        \end{itemize}
+    \item \textbf{Skirtumai:}
+        \begin{itemize}
+            \item \textbf{PowerPC:}
+                \begin{itemize}
+                    \item Palaiko vieno ir dvigubo tikslumo \textbf{IEEE 754} slankiojo kablelio aritmetiką.
+                    \item Vėlesnėse versijose palaikomi vektoriniai duomenų tipai (\textbf{Altivec}).
+                \end{itemize}
+            \item \textbf{SuperH:}
+                \begin{itemize}
+                    \item Ribotas slankiojo kablelio palaikymas (tik kai kuriuose modeliuose, pvz., SH-4).
+                    \item Nėra vektorinių ar egzotiškų duomenų tipų palaikymo.
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
