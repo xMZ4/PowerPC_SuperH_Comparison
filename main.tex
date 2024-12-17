@@ -789,6 +789,73 @@ SuperH architektūra buvo sukurta kaip energiją taupanti ir kompaktiška sistem
     \item \textbf{SuperH:} Naudota energiją taupančiose įterptosiose sistemose, buitinėje elektronikoje ir žaidimų konsolėse (pvz., SEGA Dreamcast).
 \end{itemize}
 
+\section{Programinė įranga ir įrankiai}
+\subsection{PowerPC}
+PowerPC architektūrai buvo sukurta daug programinės įrangos, nes ji buvo naudojama įvairiose srityse: asmeniniuose kompiuteriuose, serveriuose ir žaidimų konsolėse.
+
+\begin{itemize}
+    \item \textbf{Programinės įrangos kiekis ir prieinamumas:}
+        \begin{itemize}
+            \item Daugybė programų buvo sukurtos \textbf{Apple Macintosh} kompiuteriams su PowerPC procesoriais (pvz., Mac OS 7–9, Mac OS X iki 10.5 versijos).
+            \item Naudota žaidimų konsolėse, tokiose kaip \textbf{Xbox 360}, \textbf{Nintendo Wii}, kur buvo pritaikyti žaidimai ir sisteminė programinė įranga.
+            \item Šiandien kai kurios programos vis dar prieinamos per emuliatorius ir senų sistemų palaikymo bendruomenes.
+        \end{itemize}
+    \item \textbf{Prieinami kompiliatoriai ir įrankiai:}
+        \begin{itemize}
+            \item \textbf{GCC (GNU Compiler Collection):} Palaiko PowerPC platformą ir naudojamas kompiliavimui.
+            \item \textbf{IBM XL C/C++:} Aukšto našumo kompiliatorius, skirtas PowerPC serveriams.
+            \item \textbf{LLVM/Clang:} Naudotas kai kurioms PowerPC implementacijoms.
+            \item Derintojai: \textbf{GDB (GNU Debugger)}, \textbf{IBM Debugger}.
+            \item Surinkėjai: GNU Assembler (GAS), IBM Assembler.
+        \end{itemize}
+    \item \textbf{Programinės įrangos bibliotekos:}
+        \begin{itemize}
+            \item \textbf{libc}: Standartinė C biblioteka.
+            \item \textbf{AltiVec bibliotekos:} Naudojamos vektorinių skaičiavimų optimizacijai.
+            \item \textbf{POSIX bibliotekos}: Sistemos funkcijoms ir multithreading'ui.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūrai buvo sukurta mažiau programinės įrangos dėl jos orientacijos į įterptąsias sistemas ir buitinę elektroniką.
+
+\begin{itemize}
+    \item \textbf{Programinės įrangos kiekis ir prieinamumas:}
+        \begin{itemize}
+            \item SuperH procesoriai naudoti \textbf{SEGA Dreamcast} konsolėje, kur buvo sukurta daugybė žaidimų ir multimedijos programų.
+            \item Plačiai naudoti \textbf{įterptųjų sistemų} srityje (automobilių valdikliai, pramoniniai valdikliai).
+            \item Šiandien SuperH programinė įranga yra prieinama per emuliatorius (pvz., \textbf{Shenmue} emuliatoriai) ir atviro kodo bendruomenes.
+        \end{itemize}
+    \item \textbf{Prieinami kompiliatoriai ir įrankiai:}
+        \begin{itemize}
+            \item \textbf{GCC (GNU Compiler Collection):} Palaiko SuperH platformą.
+            \item \textbf{Renesas kompiliatoriai:} Oficialūs kompiliatoriai, skirti SH-4 ir kitoms versijoms.
+            \item Derintojai: \textbf{GDB}, Renesas derintojai.
+            \item Surinkėjai: GNU Assembler (GAS).
+            \item Profiliuotojai: \textbf{gprof} ir įrankiai iš Renesas.
+        \end{itemize}
+    \item \textbf{Programinės įrangos bibliotekos:}
+        \begin{itemize}
+            \item \textbf{newlib}: Lengva C biblioteka, skirta įterptosioms sistemoms.
+            \item \textbf{libm}: Matematinė biblioteka fiksuoto ir slankiojo kablelio operacijoms.
+            \item Specializuotos bibliotekos, skirtos valdyti \textbf{serijines sąsajas} ir periferinius įrenginius.
+        \end{itemize}
+\end{itemize}
+
+\section*{Programinės įrangos palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:}
+        \begin{itemize}
+            \item Naudota asmeniniuose kompiuteriuose, serveriuose ir žaidimų konsolėse.
+            \item Turtingas įrankių ir bibliotekų rinkinys, palaikomas GNU ir IBM ekosistemų.
+        \end{itemize}
+    \item \textbf{SuperH:}
+        \begin{itemize}
+            \item Orientuota į įterptąsias sistemas ir žaidimų konsoles.
+            \item Supaprastintas įrankių rinkinys su specializuotomis bibliotekomis mažoms sistemoms.
+        \end{itemize}
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
