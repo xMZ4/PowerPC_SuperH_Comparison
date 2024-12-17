@@ -285,6 +285,79 @@ SuperH architektūroje virtualios atminties palaikymas yra ribotas ir priklauso 
     \item \textbf{PowerPC:} Pilnas virtualios atminties palaikymas naudojant puslapiavimą ir MMU, su galimybe derinti su segmentavimu.
     \item \textbf{SuperH:} Ribotas palaikymas – ankstyvieji modeliai nepalaikė virtualios atminties, o vėlesniuose modeliuose įdiegtas puslapiavimas.
 \end{itemize}
+\section{Komandų sistema (ISA)}
+\subsection{PowerPC}
+PowerPC architektūra naudoja \textbf{RISC (Reduced Instruction Set Computer)} tipo komandų sistemą. Ji pasižymi mažesniu, bet efektyviu komandų rinkiniu, kuris optimizuoja vykdymo greitį.
+
+\begin{itemize}
+    \item \textbf{Komandų skaičius:} Apie 200–300 instrukcijų (priklausomai nuo versijos).
+    \item \textbf{Instrukcijų klasės:}
+        \begin{itemize}
+            \item \textbf{Aritmetinės:} Sudėtis, atimtis, daugyba.
+            \item \textbf{Loginės:} AND, OR, XOR, NOT.
+            \item \textbf{Perkėlimo:} Duomenų judėjimas tarp registrų ir atminties.
+            \item \textbf{Šakų (Branch):} Sąlyginiai ir nesąlyginiai šuoliai.
+            \item \textbf{Slankaus kablelio:} Aritmetika su slankiuoju kableliu.
+            \item \textbf{Specialios:} Sistemos valdymo instrukcijos.
+        \end{itemize}
+    \item \textbf{Instrukcijų formatai:}
+        \begin{itemize}
+            \item Fiksuoto dydžio 32 bitų instrukcijos.
+            \item Rūšys: \textbf{R-formatas} (registrų operacijos), \textbf{I-formatas} (immediate reikšmės), \textbf{B-formatas} (šakos).
+        \end{itemize}
+\end{itemize}
+
+\textbf{Instrukcijų pavyzdžiai:}
+\begin{itemize}
+    \item \texttt{add r3, r4, r5} – Sudeda \texttt{r4} ir \texttt{r5}, rezultatą įrašo į \texttt{r3}.
+    \item \texttt{sub r3, r4, r5} – Atima \texttt{r5} iš \texttt{r4}, rezultatą įrašo į \texttt{r3}.
+    \item \texttt{and r3, r4, r5} – Atlieka loginę AND tarp \texttt{r4} ir \texttt{r5}, rezultatą įrašo į \texttt{r3}.
+    \item \texttt{or r3, r4, r5} – Atlieka loginę OR tarp \texttt{r4} ir \texttt{r5}.
+    \item \texttt{lwz r3, 0(r4)} – Įkrauna žodį iš atminties (adresu \texttt{r4}) į \texttt{r3}.
+    \item \texttt{stw r3, 0(r4)} – Saugo žodį iš \texttt{r3} į atmintį (adresu \texttt{r4}).
+    \item \texttt{b label} – Besąlyginis šuolis į nurodytą etiketę.
+    \item \texttt{bl label} – Šuolis su grįžimo adresu į \texttt{Link Register}.
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūra taip pat naudoja \textbf{RISC} komandų sistemą, bet pasižymi mažesniu instrukcijų rinkiniu, kuris optimizuotas įterptosioms sistemoms.
+
+\begin{itemize}
+    \item \textbf{Komandų skaičius:} Apie 50–100 instrukcijų.
+    \item \textbf{Instrukcijų klasės:}
+        \begin{itemize}
+            \item \textbf{Aritmetinės:} Sudėtis, atimtis, daugyba.
+            \item \textbf{Loginės:} AND, OR, XOR.
+            \item \textbf{Perkėlimo:} Duomenų perkėlimas tarp registrų ir atminties.
+            \item \textbf{Šakų (Branch):} Sąlyginiai ir nesąlyginiai šuoliai.
+        \end{itemize}
+    \item \textbf{Instrukcijų formatai:}
+        \begin{itemize}
+            \item Fiksuoto dydžio \textbf{16 bitų} instrukcijos.
+        \end{itemize}
+\end{itemize}
+
+\textbf{Instrukcijų pavyzdžiai:}
+\begin{itemize}
+    \item \texttt{add r0, r1} – Sudeda \texttt{r0} ir \texttt{r1}, rezultatą įrašo į \texttt{r0}.
+    \item \texttt{sub r0, r1} – Atima \texttt{r1} iš \texttt{r0}, rezultatą įrašo į \texttt{r0}.
+    \item \texttt{mov r0, r1} – Perkelia reikšmę iš \texttt{r1} į \texttt{r0}.
+    \item \texttt{and r0, r1} – Atlieka loginę AND tarp \texttt{r0} ir \texttt{r1}.
+    \item \texttt{or r0, r1} – Atlieka loginę OR tarp \texttt{r0} ir \texttt{r1}.
+    \item \texttt{tst r0, r1} – Patikrina loginius bitus tarp \texttt{r0} ir \texttt{r1}.
+    \item \texttt{bra label} – Besąlyginis šuolis į nurodytą etiketę.
+    \item \texttt{braf r0} – Šuolis su adresu iš \texttt{r0}.
+\end{itemize}
+
+\section*{Komandų palyginimas}
+\begin{itemize}
+    \item \textbf{Panašumai:} Abi architektūros palaiko RISC dizainą ir turi panašias instrukcijų klases (aritmetinės, loginės, šakų ir perkėlimo komandos).
+    \item \textbf{Skirtumai:}
+        \begin{itemize}
+            \item PowerPC palaiko daugiau komandų (200–300) ir turi 32 bitų instrukcijas.
+            \item SuperH turi mažesnį instrukcijų rinkinį (50–100) su 16 bitų instrukcijomis, skirtomis mažai atminties sąnaudai.
+        \end{itemize}
+\end{itemize}
 
 \bibliographystyle{plain}
 \bibliography{literatura} 
