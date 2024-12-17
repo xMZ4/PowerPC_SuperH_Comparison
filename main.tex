@@ -647,6 +647,75 @@ SuperH architektūra yra labiau supaprastinta ir pritaikyta įterptosioms sistem
         \end{itemize}
 \end{itemize}
 
+\section{Sistemų greitaveika}
+\subsection{PowerPC}
+PowerPC procesoriai pasižymėjo didesne greitaveika, orientuota į našumą, todėl jie buvo naudojami serveriuose, asmeniniuose kompiuteriuose ir žaidimų konsolėse.
+
+\begin{itemize}
+    \item \textbf{Taktinių generatorių dažniai:}
+        \begin{itemize}
+            \item Ankstyvieji modeliai veikė nuo \textbf{50 MHz} iki \textbf{200 MHz}.
+            \item Vėlesnėse versijose dažniai siekė iki \textbf{1–2 GHz} (pvz., PowerPC G4, G5).
+        \end{itemize}
+    \item \textbf{Ciklų skaičius komandai vykdyti:}
+        \begin{itemize}
+            \item Vidutinis komandų vykdymo laikas: \textbf{1–3 ciklai} dėl RISC architektūros.
+            \item Kompleksinės instrukcijos, kaip slankiojo kablelio operacijos, galėjo užtrukti iki \textbf{5–10 ciklų}.
+        \end{itemize}
+    \item \textbf{Vidutinė greitaveika:}
+        \begin{itemize}
+            \item Ankstyvieji modeliai: apie \textbf{100–200 MIPS} (milijonų instrukcijų per sekundę).
+            \item Vėlesni modeliai: daugiau nei \textbf{1000 MIPS} ir slankiojo kablelio našumas iki \textbf{10 GFLOPS}.
+        \end{itemize}
+    \item \textbf{Kainos ir našumo santykis:}
+        \begin{itemize}
+            \item PowerPC procesoriai buvo brangesni dėl didesnio našumo ir kompleksinių funkcijų.
+            \item Naudojami aukštos klasės sistemose, kur reikalingas didelis našumas.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH procesoriai buvo optimizuoti mažos galios ir kainos įterptosioms sistemoms, todėl jų greitaveika buvo kuklesnė, bet pakankama daugumai įterptųjų taikymų.
+
+\begin{itemize}
+    \item \textbf{Taktinių generatorių dažniai:}
+        \begin{itemize}
+            \item Ankstyvieji modeliai veikė nuo \textbf{20 MHz} iki \textbf{100 MHz}.
+            \item SH-4 modeliai pasiekė iki \textbf{200 MHz}.
+        \end{itemize}
+    \item \textbf{Ciklų skaičius komandai vykdyti:}
+        \begin{itemize}
+            \item Vidutinis komandų vykdymo laikas: \textbf{1–2 ciklai} dėl efektyvios RISC architektūros.
+            \item Didesnės skaičiavimo instrukcijos galėjo užtrukti iki \textbf{3–5 ciklų}.
+        \end{itemize}
+    \item \textbf{Vidutinė greitaveika:}
+        \begin{itemize}
+            \item Ankstyvieji modeliai: apie \textbf{20–50 MIPS}.
+            \item Vėlesni SH-4 modeliai: iki \textbf{200–300 MIPS}.
+        \end{itemize}
+    \item \textbf{Kainos ir našumo santykis:}
+        \begin{itemize}
+            \item SuperH buvo pigesni dėl paprastesnio dizaino ir mažesnio našumo.
+            \item Pasižymėjo geru kainos ir našumo santykiu mažos galios ir įterptosioms sistemoms.
+        \end{itemize}
+\end{itemize}
+
+\section*{Greitaveikos palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:}
+        \begin{itemize}
+            \item Aukštesni taktinių dažnių rodikliai (1–2 GHz vėlesniuose modeliuose).
+            \item Aukštesnė greitaveika (iki 1000+ MIPS ir 10 GFLOPS).
+            \item Didelė kaina dėl našumo ir papildomų funkcijų.
+        \end{itemize}
+    \item \textbf{SuperH:}
+        \begin{itemize}
+            \item Žemesni dažniai (20–200 MHz).
+            \item Kuklesnė greitaveika (iki 300 MIPS).
+            \item Geresnis kainos ir našumo santykis įterptosioms sistemoms.
+        \end{itemize}
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
