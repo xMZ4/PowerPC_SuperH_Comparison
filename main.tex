@@ -716,6 +716,62 @@ SuperH procesoriai buvo optimizuoti mažos galios ir kainos įterptosioms sistem
         \end{itemize}
 \end{itemize}
 
+\section{Spartinančios atminties naudojimas}
+\subsection{PowerPC}
+PowerPC architektūra naudojo spartinančiąją atmintį (\textbf{cache}) siekiant pagerinti našumą, sumažinant prieigos prie pagrindinės atminties delsą.
+
+\begin{itemize}
+    \item \textbf{L1 spartinančioji atmintis:}
+        \begin{itemize}
+            \item Pirmo lygio (L1) spartinančioji atmintis yra integruota į procesorių.
+            \item Dydis: nuo \textbf{8 KB} iki \textbf{64 KB} instrukcijoms ir duomenims (atskirai arba bendram naudojimui).
+        \end{itemize}
+    \item \textbf{L2 spartinančioji atmintis:}
+        \begin{itemize}
+            \item Antrasis lygis (L2) gali būti integruotas arba atskirai prijungtas.
+            \item Dydis: nuo \textbf{128 KB} iki \textbf{1 MB}.
+        \end{itemize}
+    \item \textbf{L3 spartinančioji atmintis:}
+        \begin{itemize}
+            \item Kai kuriuose PowerPC modeliuose (pvz., PowerPC G5) palaikoma trečio lygio (L3) spartinančioji atmintis.
+            \item Dydis: iki \textbf{4 MB}.
+        \end{itemize}
+\end{itemize}
+
+Spartinančioji atmintis leido PowerPC procesoriams efektyviai apdoroti duomenis, sumažinant prieigos laiką prie pagrindinės atminties, kas ypač svarbu aukštos spartos sistemose.
+
+\subsection{SuperH}
+SuperH architektūra taip pat naudojo spartinančiąją atmintį, tačiau jos dydis ir funkcionalumas buvo kuklesnis, atsižvelgiant į architektūros pritaikymą įterptosioms sistemoms.
+
+\begin{itemize}
+    \item \textbf{L1 spartinančioji atmintis:}
+        \begin{itemize}
+            \item Pirmo lygio (L1) spartinančioji atmintis yra integruota į procesorių.
+            \item Dydis: nuo \textbf{4 KB} iki \textbf{16 KB} (bendra instrukcijų ir duomenų spartinančioji atmintis).
+        \end{itemize}
+    \item \textbf{L2 spartinančioji atmintis:}
+        \begin{itemize}
+            \item Spartinančioji atmintis L2 lygyje buvo neprivaloma ir tik kai kuriuose SH-4 modeliuose.
+            \item Dydis: iki \textbf{128 KB}.
+        \end{itemize}
+\end{itemize}
+
+Dėl mažesnio spartinančiosios atminties dydžio SuperH buvo mažiau našūs lyginant su PowerPC, tačiau atitiko įterptųjų sistemų poreikius dėl mažos galios suvartojimo.
+
+\section*{Spartinančios atminties palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:}
+        \begin{itemize}
+            \item Naudojamos L1, L2 ir kai kuriais atvejais L3 spartinančiosios atminties lygiai.
+            \item L1 dydis: iki \textbf{64 KB}, L2 dydis: iki \textbf{1 MB}, L3 dydis: iki \textbf{4 MB}.
+        \end{itemize}
+    \item \textbf{SuperH:}
+        \begin{itemize}
+            \item Tik L1 spartinančioji atmintis yra standartinė.
+            \item L1 dydis: iki \textbf{16 KB}, L2 dydis (ne visada): iki \textbf{128 KB}.
+        \end{itemize}
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
