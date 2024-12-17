@@ -122,6 +122,51 @@ SuperH architektūra turi mažesnį skaičių registrų, tačiau jie yra efektyv
     \item \textbf{SuperH:} 16 bendrosios paskirties registrų, 32 bitų duomenų plotis, mažiau specializuotų registrų.
 \end{itemize}
 
+\section{Požymių bitai}
+\subsection{PowerPC}
+PowerPC architektūroje požymių bitai yra naudojami tam tikriems procesoriaus būsenos signalams valdyti. Jie yra saugomi specializuotame registruose, tokiuose kaip \textbf{Condition Register (CR)} ir \textbf{Floating Point Status and Control Register (FPSCR)}.
+
+\begin{itemize}
+    \item \textbf{CR (Condition Register):}
+        \begin{itemize}
+            \item CR registras turi \textbf{8 laukus} (CR0–CR7), kur kiekvienas laukas yra 4 bitų.
+            \item Požymių bitai atspindi instrukcijų rezultatus, tokius kaip:
+                \begin{itemize}
+                    \item \textbf{EQ (Equal):} Reikšmės lygios.
+                    \item \textbf{LT (Less Than):} Reikšmė mažesnė.
+                    \item \textbf{GT (Greater Than):} Reikšmė didesnė.
+                    \item \textbf{SO (Summary Overflow):} Viršijo aritmetinės operacijos reikšmę.
+                \end{itemize}
+        \end{itemize}
+    \item \textbf{FPSCR (Floating Point Status and Control Register):}
+        \begin{itemize}
+            \item Naudojamas slankaus kablelio operacijų požymių bitams saugoti.
+            \item Valdo tokias būsenas kaip **viršpildymas**, **nulio dalyba** ir **neapibrėžtos reikšmės**.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūroje požymių bitai taip pat egzistuoja, tačiau jų kiekis ir funkcionalumas yra supaprastintas, atsižvelgiant į architektūros efektyvumą.
+
+\begin{itemize}
+    \item \textbf{SR (Status Register):}
+        \begin{itemize}
+            \item SR registras saugo požymių bitus, kurie nurodo procesoriaus būseną.
+            \item Dažniausiai naudojami bitai:
+                \begin{itemize}
+                    \item \textbf{T (T-bit):} Rezultato tikrinimo bitas (naudojamas sąlyginiams šakoms).
+                    \item \textbf{I (Interrupt Mask):} Pertraukčių valdymas.
+                    \item \textbf{S (Supervisor Mode):} Indikuoja veikimą administratoriaus režimu.
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+\section*{Požymių bitų palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:} Išsamesnė požymių sistema su **CR** ir **FPSCR** registrais, palaikančiais aritmetinių ir slankaus kablelio operacijų būsenas.
+    \item \textbf{SuperH:} Paprastesnė sistema su **SR** registru, kuriame yra pagrindiniai bitai, reikalingi šakoms ir pertrauktims valdyti.
+\end{itemize}
+
 
 \bibliographystyle{plain}
 \bibliography{literatura} 
