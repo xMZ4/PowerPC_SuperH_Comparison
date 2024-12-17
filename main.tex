@@ -1,9 +1,12 @@
 \documentclass{article}
-\usepackage{graphicx} % Paveikslėliams įterpti
-\usepackage{geometry} % Paraščių keitimui
+\usepackage{graphicx}
+\usepackage{geometry}
 \geometry{a4paper, margin=1in}
-\usepackage{hyperref} % Nuorodoms dokumente
-\usepackage{float}    % Paveikslų ir lentelių pozicionavimui
+\usepackage{hyperref} 
+\usepackage{float}
+\usepackage{natbib} 
+\usepackage{url} 
+\bibliographystyle{agsm}
 
 \title{PowerPC ir SuperH palyginimas}
 \author{Mateušas Zlosnikas}
@@ -13,7 +16,7 @@
 
 \maketitle
 
-\tableofcontents % Turinys
+\tableofcontents
 
 \section{Įvadas}
 Šiame dokumente palyginamos dvi procesorių architektūros: \textbf{PowerPC} ir \textbf{SuperH}. Abi architektūros turėjo reikšmingą įtaką skirtingoms kompiuterių sritims – nuo įterptųjų sistemų iki aukštos spartos skaičiavimų.
@@ -99,7 +102,7 @@ PowerPC architektūra turi tiek \textbf{bendrosios paskirties}, tiek \textbf{spe
 \end{itemize}
 
 \subsection{SuperH}
-SuperH architektūra turi mažesnį skaičių registrų, tačiau jie yra efektyviai panaudojami, kadangi SuperH yra skirta įterptosioms sistemoms, kur mažas energijos suvartojimas ir greitis yra itin svarbūs.
+SuperH architektūra turi mažesnį skaičių registrų, tačiau jie yra efektyviai panaudojami, kadangi SuperH yra skirta įterptosioms sistemoms, kur mažas energijos suvartojimas ir greitis yra itin svarbūs.(\citealp{Renesas2024})
 
 \begin{itemize}
     \item \textbf{Bendrosios paskirties registrai:}
@@ -186,7 +189,7 @@ SuperH architektūra buvo sukurta kaip 32 bitų sistema:
 
 \section{Atminties išdėstymas}
 \subsection{PowerPC}
-PowerPC architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe palaikyti virtualią atmintį. 
+PowerPC architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe palaikyti virtualią atmintį. (\citealp{Wikipedia2024})
 
 \begin{itemize}
     \item \textbf{Adreso plotis:} 
@@ -212,7 +215,7 @@ PowerPC architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe pal
 \end{itemize}
 
 \subsection{SuperH}
-SuperH architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe taikyti segmentuotą atminties valdymą dėl savo paprasto dizaino.
+SuperH architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe taikyti segmentuotą atminties valdymą dėl savo paprasto dizaino.(\citealp{Wikipedia2024})
 
 \begin{itemize}
     \item \textbf{Adreso plotis:} 
@@ -774,7 +777,7 @@ Dėl mažesnio spartinančiosios atminties dydžio SuperH buvo mažiau našūs l
 
 \section{Tipinės taikymo sritys}
 \subsection{PowerPC}
-PowerPC architektūra buvo plačiai naudojama sistemose, kur reikėjo didelio našumo, patikimumo ir lankstumo. Ji buvo pritaikyta serveriuose, asmeniniuose kompiuteriuose, žaidimų konsolėse ir įterptosioms sistemoms. Dėl savo RISC dizaino ir pažangaus spartinančiosios atminties valdymo PowerPC sugebėjo atlikti sudėtingus skaičiavimus greitai ir efektyviai.
+PowerPC architektūra buvo plačiai naudojama sistemose, kur reikėjo didelio našumo (\citealp{IBM2024}), patikimumo ir lankstumo. Ji buvo pritaikyta serveriuose, asmeniniuose kompiuteriuose, žaidimų konsolėse ir įterptosioms sistemoms. Dėl savo RISC dizaino ir pažangaus spartinančiosios atminties valdymo PowerPC sugebėjo atlikti sudėtingus skaičiavimus greitai ir efektyviai.
 
 \textbf{Konkretus pavyzdys:} PowerPC procesoriai buvo naudojami žaidimų konsolėje \textbf{Xbox 360}. Konsolėje veikė trijų branduolių PowerPC procesorius, veikiantis \textbf{3.2 GHz} dažniu. Šis procesorius leido sklandžiai vykdyti aukštos kokybės žaidimus, atlikdamas sudėtingus grafinius ir fizikos skaičiavimus.
 
@@ -879,7 +882,7 @@ PowerPC architektūrai yra prieinami keli emuliatoriai, leidžiantys naudoti sen
 \end{itemize}
 
 \subsection{SuperH}
-SuperH architektūrai taip pat yra prieinami emuliatoriai, dažniausiai naudojami žaidimų ir įterptųjų sistemų programinei įrangai emuliuoti:
+SuperH architektūrai taip pat yra prieinami emuliatoriai, dažniausiai naudojami žaidimų ir įterptųjų sistemų programinei įrangai emuliuoti(\citealp{ChatGPT2024}):
 
 \begin{itemize}
     \item \textbf{Demul:}
@@ -906,6 +909,6 @@ SuperH architektūrai taip pat yra prieinami emuliatoriai, dažniausiai naudojam
 \end{itemize}
 
 \bibliographystyle{plain}
-\bibliography{literatura} 
+\bibliography{bibliografija}
 
 \end{document}
