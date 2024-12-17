@@ -240,6 +240,52 @@ SuperH architektūra naudoja \textbf{ištisinę adresų erdvę} su galimybe taik
     \item \textbf{SuperH:} Ištisinė adresų erdvė, 32 bitų adreso plotis, maksimalus atminties kiekis \( 4 \, \text{GB} \), su ribotu atminties valdymu.
 \end{itemize}
 
+\section{Virtualiosios atminties palaikymas}
+\subsection{PowerPC}
+PowerPC architektūra palaiko virtualią atmintį, kuri yra realizuota naudojant \textbf{puslapiavimą}. Tai atliekama naudojant atminties valdymo įrenginį (\textbf{MMU} – Memory Management Unit), kuris atsakingas už adresų pervedimą iš virtualiųjų į fizinius adresus.
+
+\begin{itemize}
+    \item \textbf{Puslapiavimas:}
+        \begin{itemize}
+            \item Atmintis yra padalinta į fiksuoto dydžio puslapius (pvz., 4 KB dydžio).
+            \item Virtualūs adresai susiejami su fiziniais naudojant puslapių lenteles (Page Tables).
+        \end{itemize}
+    \item \textbf{Segmentavimas:} 
+        \begin{itemize}
+            \item Nors pagrindinis mechanizmas yra puslapiavimas, kai kuriose implementacijose gali būti derinamas su segmentavimu.
+        \end{itemize}
+    \item \textbf{MMU funkcijos:}
+        \begin{itemize}
+            \item Palaiko puslapių apsaugą (Read/Write/Execute leidimai).
+            \item Leidžia naudoti virtualią atmintį, kuri gali būti didesnė nei fizinė.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūroje virtualios atminties palaikymas yra ribotas ir priklauso nuo konkretaus procesoriaus modelio. Ankstyvieji modeliai neturėjo virtualios atminties valdymo, o vėlesnėse versijose buvo pridėtas dalinis palaikymas naudojant \textbf{puslapiavimą}.
+
+\begin{itemize}
+    \item \textbf{Puslapiavimas:}
+        \begin{itemize}
+            \item Naudojamas tik kai kuriuose naujesniuose SuperH procesoriuose su MMU.
+            \item Atmintis padalinta į fiksuoto dydžio puslapius (pvz., 1 KB arba 4 KB dydžio).
+        \end{itemize}
+    \item \textbf{Segmentavimas:}
+        \begin{itemize}
+            \item Segmentavimas plačiai nebuvo naudojamas SuperH architektūroje dėl paprastesnio dizaino.
+        \end{itemize}
+    \item \textbf{Be virtualios atminties:}
+        \begin{itemize}
+            \item Ankstyvieji SuperH procesoriai dirbo tik su fiziniais adresais ir tiesioginiu atminties adresavimu.
+        \end{itemize}
+\end{itemize}
+
+\section*{Virtualios atminties palyginimas}
+\begin{itemize}
+    \item \textbf{PowerPC:} Pilnas virtualios atminties palaikymas naudojant puslapiavimą ir MMU, su galimybe derinti su segmentavimu.
+    \item \textbf{SuperH:} Ribotas palaikymas – ankstyvieji modeliai nepalaikė virtualios atminties, o vėlesniuose modeliuose įdiegtas puslapiavimas.
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
