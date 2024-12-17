@@ -359,6 +359,83 @@ SuperH architektūra taip pat naudoja \textbf{RISC} komandų sistemą, bet pasi�
         \end{itemize}
 \end{itemize}
 
+\section{Adresavimo būdai}
+\subsection{PowerPC}
+PowerPC architektūra palaiko įvairius adresavimo būdus, kurie užtikrina lankstumą ir efektyvumą vykdant komandas. Pagrindiniai būdai:
+
+\begin{itemize}
+    \item \textbf{Tiesioginis adresavimas (Immediate):}
+        \begin{itemize}
+            \item Naudojama konstanta kaip operandas.
+            \item Pavyzdys: \texttt{addi r3, r4, 10} – Prideda reikšmę 10 prie \texttt{r4}, rezultatą įrašo į \texttt{r3}.
+        \end{itemize}
+    \item \textbf{Registrinis adresavimas:}
+        \begin{itemize}
+            \item Duomenys paimami tiesiai iš registro.
+            \item Pavyzdys: \texttt{add r3, r4, r5}.
+        \end{itemize}
+    \item \textbf{Bazinis adresavimas (Base/Displacement):}
+        \begin{itemize}
+            \item Atminties adresas apskaičiuojamas pridedant poslinkį prie bazinio registro.
+            \item Pavyzdys: \texttt{lwz r3, 4(r4)} – Įkrauna žodį iš atminties adresu \texttt{r4 + 4}.
+        \end{itemize}
+    \item \textbf{Indeksuotas adresavimas:}
+        \begin{itemize}
+            \item Bazinis adresas ir indeksas saugomi registruose.
+            \item Pavyzdys: \texttt{lwzx r3, r4, r5} – Apskaičiuoja adresą \texttt{r4 + r5} ir įkrauna duomenis į \texttt{r3}.
+        \end{itemize}
+    \item \textbf{Šakų adresavimas:}
+        \begin{itemize}
+            \item Adresai naudojami šakų ir šuolių instrukcijose.
+            \item Pavyzdys: \texttt{b label}.
+        \end{itemize}
+\end{itemize}
+
+\subsection{SuperH}
+SuperH architektūra palaiko mažesnį adresavimo režimų rinkinį dėl RISC architektūros ir mažo instrukcijų ilgio (16 bitų). Pagrindiniai būdai:
+
+\begin{itemize}
+    \item \textbf{Tiesioginis adresavimas (Immediate):}
+        \begin{itemize}
+            \item Konstanta nurodoma kaip operandas.
+            \item Pavyzdys: \texttt{mov \#10, r0} – Įrašo reikšmę 10 į registrą \texttt{r0}.
+        \end{itemize}
+    \item \textbf{Registrinis adresavimas:}
+        \begin{itemize}
+            \item Duomenys paimami iš registro.
+            \item Pavyzdys: \texttt{add r0, r1} – Sudeda \texttt{r0} ir \texttt{r1}, rezultatą įrašo į \texttt{r0}.
+        \end{itemize}
+    \item \textbf{Netiesioginis adresavimas per registrą:}
+        \begin{itemize}
+            \item Atminties adresas nurodomas registre.
+            \item Pavyzdys: \texttt{mov.l @r1, r0} – Įkrauna ilgą žodį iš adreso, esančio registre \texttt{r1}, į \texttt{r0}.
+        \end{itemize}
+    \item \textbf{Netiesioginis adresavimas su poslinkiu:}
+        \begin{itemize}
+            \item Adresas apskaičiuojamas pridedant poslinkį prie registro reikšmės.
+            \item Pavyzdys: \texttt{mov.l 4(r1), r0} – Įkrauna duomenis iš adreso \texttt{r1 + 4}.
+        \end{itemize}
+    \item \textbf{Šakų adresavimas:}
+        \begin{itemize}
+            \item Naudojamas šakoms ir šuoliams.
+            \item Pavyzdys: \texttt{bra label}.
+        \end{itemize}
+\end{itemize}
+
+\section*{Adresavimo režimų palyginimas}
+\begin{itemize}
+    \item \textbf{Panašumai:}
+        \begin{itemize}
+            \item Abi architektūros palaiko tiesioginį, registrinį ir šakų adresavimą.
+            \item Abi palaiko netiesioginį adresavimą su poslinkiu.
+        \end{itemize}
+    \item \textbf{Skirtumai:}
+        \begin{itemize}
+            \item PowerPC palaiko \textbf{indeksuotą adresavimą}, kuris leidžia naudoti du registrus adreso skaičiavimui.
+            \item SuperH palaiko mažiau adresavimo režimų dėl 16 bitų instrukcijų ilgio ir paprastesnio dizaino.
+        \end{itemize}
+\end{itemize}
+
 \bibliographystyle{plain}
 \bibliography{literatura} 
 
